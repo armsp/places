@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+      .map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+    <title>OpenLayers example</title>
+  </head>
+  <body>
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li><a href="file:///home/joe/GitHub%20Repositories/travel-map/leaflet.html">Leaflet</a></li>
+          <li class="is-active"><a href="#" aria-current="page">OpenLayers</a></li>
+        </ul>
+      </nav>
+    <section class="section">
+        <div class="container">
+            </div>
+            </section>
+    <h2>My Map</h2>
+    <div id="map" class="map"></div>
+    <div id="map-l" class="map"></div>
+
+    <script type="text/javascript">
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([37.41, 8.82]),
+          zoom: 4
+        })
+      });
+    </script>
+    
+  </body>
+</html>
